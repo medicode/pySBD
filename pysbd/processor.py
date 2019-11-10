@@ -79,6 +79,10 @@ class Processor(object):
     def split_into_segments(self):
         self.check_for_parens_between_quotes()
         sents = self.text.split('\r')
+        # match anything except \r carriage return
+        # https://stackoverflow.com/questions/6125098/how-to-match-any-non-white-space-character-except-a-particular-one
+        # sents = [TextSpan(m.group(), m.start(), m.end())
+        #          for m in re.finditer(r'[^\r]+', self.text)]
         # remove empty and none values
         sents = self.rm_none_flatten(sents)
         sents = [
