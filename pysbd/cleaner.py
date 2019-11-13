@@ -54,7 +54,7 @@ class Cleaner(object):
                                  PDF.NewLineInMiddleOfSentenceNoSpacesRule)
 
     def replace_newlines(self):
-        if self.doc_type == 'pdf' or self.apply_pdf_rules == True
+        if self.doc_type == 'pdf' or self.apply_pdf_rules == True:
             self.remove_pdf_line_breaks()
         if not self.doc_type == 'pdf':
             self.text = Text(
