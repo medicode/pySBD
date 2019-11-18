@@ -61,7 +61,9 @@ class CleanRules(object):
     QuotationsFirstRule = Rule(r"''", '"')
     QuotationsSecondRule = Rule(r'``', '"')
 
-
+    MultipleWhiteSpcae = Rule(r'\s+', ' ')
+    
+    
 class HTML(object):
     # Rubular: http://rubular.com/r/9d0OVOEJWj
     HTMLTagRule = Rule(r"<\/?\w+((\s+\w+(\s*=\s*(?:\".*?\"|'.*?'|[\^'\">\s]+))?)+\s*|\s*)\/?>", '')
