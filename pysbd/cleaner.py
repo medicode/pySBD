@@ -39,6 +39,7 @@ class Cleaner(object):
             sub = re.sub(cr.NEWLINE_IN_MIDDLE_OF_SENTENCE_REGEX, '', match)
             return sub
         self.text = re.sub(r'(?:[^\.])*', replace_w_blank, self.text)
+        self.text = Text(self.text).apply(cr.MultipleWhiteSpcae)
 
     def remove_newline_in_middle_of_word(self):
         self.text = Text(self.text).apply(cr.NewLineInMiddleOfWordRule)
